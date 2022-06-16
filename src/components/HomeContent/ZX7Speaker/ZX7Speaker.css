@@ -1,0 +1,41 @@
+.ZX7Speaker__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ZX7Speaker__container {
+  width: 1110px;
+  height: 300px;
+  border-radius: 8px;
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ZX7Speaker-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: absolute;
+  left: 90px;
+  top: 100px;
+}
+
+.ZX7Speaker-content h4 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ZX7Speaker-content button {
+  width: 160px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  border: 1px solid #000000;
+  text-transform: uppercase;
+}
