@@ -79,13 +79,15 @@
   margin-top: 1rem;
 }
 
-.shopCategory-product-text p {
+.shopCategory-link {
   font-weight: 700;
   font-size: 13px;
   line-height: 18px;
   letter-spacing: 1px;
+  opacity: 0.6;
   text-transform: uppercase;
-  opacity: 0.5;
+  color: var(--color-black);
+  text-decoration: none;
 }
 
 .shopCategory-arrowRight {

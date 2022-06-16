@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './ShopCategory.css';
 import headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import speakers from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
@@ -34,7 +36,9 @@ const ShopCategory = () => {
             <div className='shopCategory-product-content'>
               <h5>{category.name}</h5>
               <div className='shopCategory-product-text'>
-                <p>SHOP</p>
+                <Link to={`/${category.name}`} className='shopCategory-link'>
+                  Shop
+                </Link>
                 <img src={arrowRight} alt='right-arrow' className='shopCategory-arrowRight' />
               </div>
             </div>
