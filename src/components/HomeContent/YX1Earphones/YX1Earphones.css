@@ -1,0 +1,56 @@
+.YX1Earphones__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.YX1Earphones__container {
+  display: flex;
+  flex-direction: row;
+  width: 1110px;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.YX1Earphones__container img {
+  width: 540px;
+  height: 320px;
+  border-radius: 8px;
+}
+
+.YX1Earphones-content__container {
+  width: 540px;
+  height: 320px;
+  border-radius: 8px;
+  background-color: var(--color-light-gray);
+  position: relative;
+}
+
+.YX1Earphones-content {
+  display: flex;
+  flex-direction: column;
+  width: 247px;
+  height: 118px;
+  gap: 1.5rem;
+  position: absolute;
+  left: 80px;
+  top: 105px;
+}
+
+.YX1Earphones-content h4 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.YX1Earphones-content button {
+  width: 160px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid black;
+}
