@@ -1,0 +1,10 @@
+.homeHeader__wrapper {
+  width: 100%;
+  height: 729px;
+  background-color: #191919;
+}
+
+.homeHeader__container {
+  display: flex;
+  justify-content: center;
+}
