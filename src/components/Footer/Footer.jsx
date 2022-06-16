@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { AiFillFacebook, AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
 
 import './Footer.css';
@@ -8,13 +9,23 @@ const Footer = () => {
     <div className='footer__container'>
       <div className='footer-line'></div>
       <div className='footer-navBar'>
-        <img src={logo} alt='logo' className='footer-navBar-logo' />
-        <ul className='footer-navBar-links'>
-          <li className='footer-navBar-link'>Home</li>
-          <li className='footer-navBar-link'>Headphones</li>
-          <li className='footer-navBar-link'>Speakers</li>
-          <li className='footer-navBar-link'>Earphones</li>
-        </ul>
+        <Link to='/'>
+          <img src={logo} alt='logo' className='footer-navBar-logo' />
+        </Link>
+        <div className='footer-navBar-links'>
+          <Link to='/' className='footer-navBar-link'>
+            Home
+          </Link>
+          <Link to='/headphones' className='footer-navBar-link'>
+            Headphones
+          </Link>
+          <Link to='/speakers' className='footer-navBar-link'>
+            Speakers
+          </Link>
+          <Link to='/earphones' className='footer-navBar-link'>
+            Earphones
+          </Link>
+        </div>
       </div>
       <p className='footer-about'>
         Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music

@@ -33,9 +33,6 @@
 .footer-navBar-links {
   display: flex;
   flex-direction: row;
-  color: var(--color-white);
-  list-style: none;
-  text-transform: uppercase;
   gap: 2.3rem;
   position: absolute;
   left: 670px;
@@ -46,6 +43,9 @@
   font-size: 13px;
   line-height: 25px;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--color-white);
+  text-transform: uppercase;
 }
 
 .footer-about {

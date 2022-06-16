@@ -16,7 +16,6 @@
 .navbar-links {
   display: flex;
   flex-direction: row;
-  color: var(--color-white);
   list-style: none;
   position: absolute;
   width: 429px;
@@ -30,6 +29,9 @@
   font-size: 13px;
   line-height: 25px;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--color-white);
+  text-transform: uppercase;
 }
 
 .navbar-cartIcon {
