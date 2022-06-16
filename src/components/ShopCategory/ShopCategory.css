@@ -1,0 +1,95 @@
+.shopCategory__wrapper {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  width: 100%;
+}
+
+.shopCategory__container {
+  display: flex;
+  flex-direction: row;
+  width: 1110px;
+  height: 284px;
+  margin-top: 11rem;
+  gap: 3rem;
+}
+
+.shopCategory-product {
+  width: 340px;
+  height: 284px;
+  position: relative;
+}
+
+.shopCategory-product-image {
+  width: 210px;
+  position: absolute;
+  top: -80px;
+  left: 62px;
+}
+
+.shopCategory-headphones-image {
+  width: 210px;
+  position: absolute;
+  top: -80px;
+  left: 62px;
+}
+
+.shopCategory-speakers-image {
+  width: 220px;
+  position: absolute;
+  top: -76px;
+  left: 62px;
+}
+
+.shopCategory-earphones-image {
+  width: 220px;
+  position: absolute;
+  top: -65px;
+  left: 62px;
+}
+
+.shopCategory-product-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 340px;
+  height: 204px;
+  background-color: var(--color-light-gray);
+  border-radius: 8px;
+}
+
+.shopCategory-product-content h5 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+
+  margin-top: 5rem;
+}
+
+.shopCategory-product-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.shopCategory-product-text p {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.shopCategory-arrowRight {
+  width: 5px;
+  height: 10px;
+  margin-left: 0.5rem;
+}
