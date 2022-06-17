@@ -1,6 +1,7 @@
 .missionStatement__wrapper {
   display: flex;
   justify-content: center;
+  margin-top: 7rem;
 }
 
 .missionStatement__container {
@@ -8,7 +9,6 @@
   flex-direction: row;
   width: 1110px;
   height: 588px;
-  margin-top: 11rem;
 }
 
 .missionStatement__content {
