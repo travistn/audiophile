@@ -1,11 +1,18 @@
 import './CategoryProductRight.css';
 
-const CategoryProductRight = ({ productImage, productName, description }) => {
+const CategoryProductRight = ({ productImage, productName, description, category }) => {
   return (
     <div className='categoryProductRight__wrapper'>
       <div className='categoryProductRight__container'>
         <div className='categoryProductRight__content'>
-          <h3>{productName}</h3>
+          <h3
+            className={
+              category === 'speakers'
+                ? 'productCategory-speakers'
+                : 'categoryProductRight__content-product-name'
+            }>
+            {productName}
+          </h3>
           <p>{description}</p>
           <button>See product</button>
         </div>

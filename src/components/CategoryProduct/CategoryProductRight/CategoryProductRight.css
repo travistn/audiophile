@@ -28,7 +28,7 @@
   gap: 2rem;
 }
 
-.categoryProductRight__content h3 {
+.categoryProductRight__content-product-name {
   width: 450px;
   height: 120px;
   font-weight: 700;

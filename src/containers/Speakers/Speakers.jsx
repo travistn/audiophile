@@ -13,12 +13,14 @@ const Speakers = () => {
     <>
       <CategoryHeader category='speakers' />
       <CategoryProductLeft
+        category='speakers'
         productImage={zx9_speaker}
         productName='ZX9 Speaker'
         description='Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that 
         offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.'
       />
       <CategoryProductRight
+        category='speakers'
         productImage={zx7_speaker}
         productName='ZX7 Speaker'
         description='Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile 

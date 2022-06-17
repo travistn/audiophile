@@ -1,6 +1,6 @@
 import './CategoryProductLeft.css';
 
-const CategoryProductLeft = ({ productImage, productName, description }) => {
+const CategoryProductLeft = ({ productImage, productName, description, category }) => {
   return (
     <div className='categoryProductLeft__wrapper'>
       <div className='categoryProductLeft__container'>
@@ -13,7 +13,14 @@ const CategoryProductLeft = ({ productImage, productName, description }) => {
           ) : (
             ''
           )}
-          <h3>{productName}</h3>
+          <h3
+            className={
+              category === 'speakers'
+                ? 'productCategory-speakers'
+                : 'categoryProductLeft__content-product-name'
+            }>
+            {productName}
+          </h3>
           <p>{description}</p>
           <button>See product</button>
         </div>

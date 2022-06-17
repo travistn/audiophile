@@ -9,7 +9,7 @@ import yx1_earphones from '../../assets/product-yx1-earphones/desktop/image-prod
 const Earphones = () => {
   return (
     <>
-      <CategoryHeader />
+      <CategoryHeader category='earphones' />
       <CategoryProductLeft
         productImage={yx1_earphones}
         productName='YX1 Wireless Earphones'
