@@ -4,6 +4,7 @@ import './App.css';
 import Home from './containers/Home/Home';
 import Headphones from './containers/Headphones/Headphones';
 import Speakers from './containers/Speakers/Speakers';
+import Earphones from './containers/Earphones/Earphones';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/headphones' element={<Headphones />} />
         <Route path='/speakers' element={<Speakers />} />
+        <Route path='/earphones' element={<Earphones />} />
       </Routes>
     </>
   );
