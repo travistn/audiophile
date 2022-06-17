@@ -6,7 +6,7 @@ const CategoryProductLeft = ({ productImage, productName, description }) => {
       <div className='categoryProductLeft__container'>
         <img src={productImage} alt='product' />
         <div className='categoryProductLeft__content'>
-          {productName === 'XX99 Mark II Headphones' ? <h5>New Product</h5> : ''}
+          {productName === 'XX99 Mark II Headphones' || 'ZX9 Speaker' ? <h5>New Product</h5> : ''}
           <h3>{productName}</h3>
           <p>{description}</p>
           <button>See product</button>
