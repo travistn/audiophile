@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
+import ProductFeatures from '../../components/ProductFeatures/ProductFeatures';
 import './Product.css';
 
 import data from '../../data.json';
@@ -26,8 +27,6 @@ const Product = ({ slug }) => {
     fetchImage();
   }, [product]);
 
-  console.log(product);
-
   return (
     <>
       <div className='product-navbar'>
@@ -42,6 +41,7 @@ const Product = ({ slug }) => {
             description={product.description}
             price={`$${product.price}`}
           />
+          <ProductFeatures product={product} />
         </div>
       </div>
     </>
