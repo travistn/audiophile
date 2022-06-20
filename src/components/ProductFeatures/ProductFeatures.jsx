@@ -3,8 +3,6 @@ import './ProductFeatures.css';
 const ProductFeatures = ({ product }) => {
   const features = product.features.split('\n');
 
-  console.log(product);
-
   return (
     <div className='productFeatures__wrapper'>
       <div className='productFeatures__container'>
@@ -21,7 +19,7 @@ const ProductFeatures = ({ product }) => {
           <h4>In the box</h4>
           <ul className='productFeatures-parts'>
             {product.includes?.map((part) => (
-              <li>
+              <li key={product.id}>
                 <span>{`${part.quantity}x `}</span>
                 <p> {part.item}</p>
               </li>
