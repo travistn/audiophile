@@ -59,3 +59,8 @@
   color: var(--color-white);
   border-style: none;
 }
+
+.categoryProductRight__content button:hover {
+  cursor: pointer;
+  background-color: var(--color-pale-orange);
+}

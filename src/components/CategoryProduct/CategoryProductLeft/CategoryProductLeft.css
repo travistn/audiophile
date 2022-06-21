@@ -80,3 +80,8 @@
   color: var(--color-white);
   border-style: none;
 }
+
+.categoryProductLeft__content button:hover {
+  cursor: pointer;
+  background-color: var(--color-pale-orange);
+}
