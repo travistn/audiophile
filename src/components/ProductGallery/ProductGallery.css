@@ -1,0 +1,37 @@
+.productGallery__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+.productGallery__container {
+  display: flex;
+  flex-direction: row;
+  width: 1110px;
+  gap: 2rem;
+}
+
+.productGallery-left {
+  display: flex;
+  flex-direction: column;
+  width: 445px;
+  height: 592px;
+  gap: 2rem;
+}
+
+.productGallery-left img {
+  width: 445px;
+  height: 280px;
+  border-radius: 8px;
+}
+
+.productGallery-right {
+  width: 635px;
+  height: 592px;
+}
+
+.productGallery-right img {
+  width: 635px;
+  height: 592px;
+  border-radius: 8px;
+}

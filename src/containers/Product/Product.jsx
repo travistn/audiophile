@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
 import ProductFeatures from '../../components/ProductFeatures/ProductFeatures';
+import ProductGallery from '../../components/ProductGallery/ProductGallery';
 import './Product.css';
 
 import data from '../../data.json';
@@ -42,6 +43,7 @@ const Product = ({ slug }) => {
             price={`$${product.price}`}
           />
           <ProductFeatures product={product} />
+          <ProductGallery product={product} />
         </div>
       </div>
     </>
@@ -49,7 +51,3 @@ const Product = ({ slug }) => {
 };
 
 export default Product;
-
-// './assets/product-xx99-mark-two-headphones/desktop/image-product.jpg'
-
-// './assets/product-xx99-mark-two-headphones/desktop/image-product.jpg'
