@@ -9,7 +9,7 @@ import xx99MarkTwo from '../../assets/product-xx99-mark-two-headphones/desktop/i
 import xx99MarkOne from '../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg';
 import xx59Headphones from '../../assets/product-xx59-headphones/desktop/image-product.jpg';
 
-const Headphones = ({ setSlug }) => {
+const Headphones = () => {
   return (
     <>
       <CategoryHeader category='headphones' />
@@ -19,7 +19,6 @@ const Headphones = ({ setSlug }) => {
         description='The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone 
         experience by reproducing the balanced depth and precision of studio-quality sound.'
         slug='xx99-mark-two-headphones'
-        setSlug={setSlug}
       />
       <CategoryProductRight
         productImage={xx99MarkOne}
@@ -27,7 +26,6 @@ const Headphones = ({ setSlug }) => {
         description='As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction 
         for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.'
         slug='xx99-mark-one-headphones'
-        setSlug={setSlug}
       />
       <CategoryProductLeft
         productImage={xx59Headphones}
@@ -35,7 +33,6 @@ const Headphones = ({ setSlug }) => {
         description='Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The 
         stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'
         slug='xx59-headphones'
-        setSlug={setSlug}
       />
       <ShopCategory />
       <MissionStatement />

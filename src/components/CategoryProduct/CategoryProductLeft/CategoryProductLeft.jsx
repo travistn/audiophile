@@ -2,18 +2,10 @@ import { useNavigate } from 'react-router-dom';
 
 import './CategoryProductLeft.css';
 
-const CategoryProductLeft = ({
-  productImage,
-  productName,
-  description,
-  category,
-  slug,
-  setSlug,
-}) => {
+const CategoryProductLeft = ({ productImage, productName, description, category, slug }) => {
   const navigate = useNavigate();
 
   const handleProductClick = () => {
-    setSlug(slug);
     navigate(`/product/${slug}`);
   };
 

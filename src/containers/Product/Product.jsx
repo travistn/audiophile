@@ -1,17 +1,21 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import Navbar from '../../components/Navbar/Navbar';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
 import ProductFeatures from '../../components/ProductFeatures/ProductFeatures';
 import ProductGallery from '../../components/ProductGallery/ProductGallery';
+import ProductSuggestion from '../../components/ProductSuggestion/ProductSuggestion';
 import './Product.css';
 
 import data from '../../data.json';
 
-const Product = ({ slug }) => {
+const Product = () => {
   const [image, setImage] = useState('');
+  const navigate = useNavigate();
+  const { slug } = useParams();
 
-  const product = data.find((item) => item.slug === slug);
+  const product = data?.filter((product) => product?.slug === slug)[0];
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -35,7 +39,9 @@ const Product = ({ slug }) => {
       </div>
       <div className='product__wrapper'>
         <div className='product__container'>
-          <p className='product-go-back'>Go Back</p>
+          <p className='product-go-back' onClick={() => navigate(-1)}>
+            Go Back
+          </p>
           <ProductDetails
             productImage={image}
             productName={product.name}
@@ -44,6 +50,7 @@ const Product = ({ slug }) => {
           />
           <ProductFeatures product={product} />
           <ProductGallery product={product} />
+          <ProductSuggestion products={product.others} />
         </div>
       </div>
     </>
