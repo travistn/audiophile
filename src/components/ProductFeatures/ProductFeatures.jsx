@@ -9,17 +9,17 @@ const ProductFeatures = ({ product }) => {
         <div className='productFeatures-features'>
           <h4>Features</h4>
           <p>
-            {features[0]}
+            {features?.[0]}
             <br />
             <br />
-            {features[2]}
+            {features?.[2]}
           </p>
         </div>
         <div className='productFeatures-box'>
           <h4>In the box</h4>
           <ul className='productFeatures-parts'>
-            {product.includes?.map((part) => (
-              <li key={product.id}>
+            {product.includes?.map((part, index) => (
+              <li key={index}>
                 <span>{`${part.quantity}x `}</span>
                 <p> {part.item}</p>
               </li>
