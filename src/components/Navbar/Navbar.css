@@ -34,10 +34,15 @@
   text-transform: uppercase;
 }
 
+.navbar-link:hover {
+  color: var(--color-dark-orange);
+}
+
 .navbar-cartIcon {
   width: 23.33px;
   position: absolute;
   left: 1251.5px;
+  cursor: pointer;
 }
 
 .navbar-underline {

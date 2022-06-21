@@ -48,6 +48,10 @@
   text-transform: uppercase;
 }
 
+.footer-navBar-link:hover {
+  color: var(--color-dark-orange);
+}
+
 .footer-about {
   width: 540px;
   height: 100px;
@@ -85,4 +89,9 @@
 
 .footer-socials-icon {
   font-size: 28px;
+}
+
+.footer-socials-icon:hover {
+  cursor: pointer;
+  color: var(--color-dark-orange);
 }
