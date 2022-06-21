@@ -61,3 +61,8 @@
   letter-spacing: 1px;
   border-style: none;
 }
+
+.headerContent button:hover {
+  cursor: pointer;
+  background-color: var(--color-pale-orange);
+}

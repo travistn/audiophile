@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 import './ZX9Speaker.css';
 import speaker from '../../../assets/home/desktop/image-speaker-zx9.png';
 import circles from '../../../assets/home/desktop/pattern-circles.svg';
 
 const ZX9Speaker = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='ZX9Speaker__wrapper'>
       <div className='ZX9Speaker__container'>
@@ -13,7 +17,7 @@ const ZX9Speaker = () => {
             Upgrade to premium speakers that are phenomenally built to deliver truly remarkable
             sound.
           </p>
-          <button>SEE PRODUCT</button>
+          <button onClick={() => navigate('/product/zx9-speaker')}>SEE PRODUCT</button>
         </div>
         <div className='ZX9Speaker-circles'>
           <img src={circles} alt='circles-pattern' />

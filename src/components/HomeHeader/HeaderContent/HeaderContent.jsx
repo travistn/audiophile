@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router-dom';
+
 import './HeaderContent.css';
 
 const HeaderContent = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='headerContent__container'>
       <div className='headerContent'>
@@ -10,7 +14,7 @@ const HeaderContent = () => {
           Experience natural, lifelike audio and exceptional build quality made for the passionate
           music enthusiast.
         </p>
-        <button>SEE PRODUCT</button>
+        <button onClick={() => navigate('/product/xx99-mark-two-headphones')}>SEE PRODUCT</button>
       </div>
     </div>
   );

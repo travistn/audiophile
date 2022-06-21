@@ -54,3 +54,9 @@
   text-transform: uppercase;
   border: 1px solid black;
 }
+
+.YX1Earphones-content button:hover {
+  cursor: pointer;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

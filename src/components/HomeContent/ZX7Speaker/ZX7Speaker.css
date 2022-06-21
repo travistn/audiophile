@@ -39,3 +39,9 @@
   border: 1px solid #000000;
   text-transform: uppercase;
 }
+
+.ZX7Speaker-content button:hover {
+  cursor: pointer;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

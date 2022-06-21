@@ -59,6 +59,12 @@
   font-size: 13px;
   line-height: 18px;
   letter-spacing: 1px;
+  border-style: none;
+}
+
+.ZX9Speaker-content button:hover {
+  cursor: pointer;
+  background-color: rgb(66, 66, 66);
 }
 
 .ZX9Speaker-circles img {
