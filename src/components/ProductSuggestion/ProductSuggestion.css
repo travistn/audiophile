@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 8rem;
+  margin-bottom: 2rem;
 }
 
 .productSuggestion__container {
@@ -75,4 +76,9 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   border-style: none;
+}
+
+.productSuggestion button:hover {
+  cursor: pointer;
+  background-color: var(--color-pale-orange);
 }
