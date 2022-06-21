@@ -6,6 +6,9 @@ import ProductDetails from '../../components/ProductDetails/ProductDetails';
 import ProductFeatures from '../../components/ProductFeatures/ProductFeatures';
 import ProductGallery from '../../components/ProductGallery/ProductGallery';
 import ProductSuggestion from '../../components/ProductSuggestion/ProductSuggestion';
+import ShopCategory from '../../components/ShopCategory/ShopCategory';
+import MissionStatement from '../../components/MissionStatement/MissionStatement';
+import Footer from '../../components/Footer/Footer';
 import './Product.css';
 
 import data from '../../data.json';
@@ -53,6 +56,9 @@ const Product = () => {
           <ProductSuggestion products={product.others} />
         </div>
       </div>
+      <ShopCategory />
+      <MissionStatement />
+      <Footer />
     </>
   );
 };
