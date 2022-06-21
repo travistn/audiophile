@@ -79,6 +79,12 @@
   margin-left: auto;
 }
 
+.product__content-quantity-minus:hover,
+.product__content-quantity-plus:hover {
+  cursor: pointer;
+  color: var(--color-dark-orange);
+}
+
 .product__content-quantity span {
   font-size: 18px;
   font-weight: 700;
@@ -96,4 +102,9 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   border-style: none;
+}
+
+.product__content-cart button:hover {
+  cursor: pointer;
+  background-color: var(--color-pale-orange);
 }
