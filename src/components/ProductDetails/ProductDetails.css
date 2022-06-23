@@ -57,6 +57,11 @@
   width: 296px;
   height: 48px;
   gap: 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .product__content-quantity {
@@ -88,6 +93,7 @@
 .product__content-quantity span {
   font-size: 18px;
   font-weight: 700;
+  width: 10px;
 }
 
 .product__content-cart button {

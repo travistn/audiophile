@@ -45,12 +45,7 @@ const Product = () => {
           <p className='product-go-back' onClick={() => navigate(-1)}>
             Go Back
           </p>
-          <ProductDetails
-            productImage={image}
-            productName={product.name}
-            description={product.description}
-            price={`$${product.price}`}
-          />
+          <ProductDetails productImage={image} product={product} />
           <ProductFeatures product={product} />
           <ProductGallery product={product} />
           <ProductSuggestion products={product.others} />
