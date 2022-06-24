@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './ZX9Speaker.css';
 import speaker from '../../../assets/home/desktop/image-speaker-zx9.png';
+import speaker7 from '../../../assets/home/desktop/image-speaker-zx7.jpg';
 import circles from '../../../assets/home/desktop/pattern-circles.svg';
 
 const ZX9Speaker = () => {
