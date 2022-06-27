@@ -7,8 +7,6 @@ import './Cart.css';
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
 
-  console.log(cart);
-
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem('cart')));
   }, [setCart]);
