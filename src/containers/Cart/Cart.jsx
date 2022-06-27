@@ -8,13 +8,11 @@ import './Cart.css';
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
 
-  console.log(cart);
-
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem('cart')));
   }, [setCart]);
 
-  const totalPrice = cart.reduce(
+  const totalPrice = cart?.reduce(
     (prevPrice, current) => prevPrice + current.price * current.quantity,
     0
   );
