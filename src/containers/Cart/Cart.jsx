@@ -12,9 +12,10 @@ const Cart = () => {
     setCart(JSON.parse(localStorage.getItem('cart')));
   }, [setCart]);
 
-  const totalPrice = cart
-    ?.reduce((prevPrice, current) => prevPrice + current.price * current.quantity, 0)
-    .toLocaleString();
+  const totalPrice = cart?.reduce(
+    (prevPrice, current) => prevPrice + current.price * current.quantity,
+    0
+  );
 
   return (
     <div className='cart__container'>
@@ -25,7 +26,7 @@ const Cart = () => {
       <CartProducts cart={cart} setCart={setCart} />
       <div className='cart-total'>
         <h3>Total</h3>
-        <p>{`$${totalPrice}`}</p>
+        <p>{`$${(totalPrice > 0 ? totalPrice : 0).toLocaleString()}`}</p>
       </div>
       <button>Checkout</button>
     </div>
