@@ -37,3 +37,11 @@ export const editCart = (product, modifier, setCart) => {
   setCart(cart);
   localStorage.setItem('cart', JSON.stringify(cart));
 };
+
+export const clearCart = (setCart) => {
+  localStorage.clear();
+
+  let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+
+  setCart(cart);
+};
