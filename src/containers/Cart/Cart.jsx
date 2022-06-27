@@ -8,9 +8,16 @@ import './Cart.css';
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
 
+  console.log(cart);
+
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem('cart')));
   }, [setCart]);
+
+  const totalPrice = cart.reduce(
+    (prevPrice, current) => prevPrice + current.price * current.quantity,
+    0
+  );
 
   return (
     <div className='cart__container'>
@@ -21,7 +28,7 @@ const Cart = () => {
       <CartProducts cart={cart} setCart={setCart} />
       <div className='cart-total'>
         <h3>Total</h3>
-        <p>$5000</p>
+        <p>{`$${totalPrice}`}</p>
       </div>
       <button>Checkout</button>
     </div>
