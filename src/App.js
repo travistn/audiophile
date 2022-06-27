@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
+import { AppContext } from './contexts/AppContext';
 import Home from './containers/Home/Home';
 import Headphones from './containers/Headphones/Headphones';
 import Speakers from './containers/Speakers/Speakers';
@@ -9,8 +11,12 @@ import Product from './containers/Product/Product';
 import ScrollToTop from './utils/ScrollToTop';
 
 const App = () => {
+  const [cart, setCart] = useState();
+
+  const contextValues = { cart, setCart };
+
   return (
-    <>
+    <AppContext.Provider value={contextValues}>
       <ScrollToTop>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -20,7 +26,7 @@ const App = () => {
           <Route path={`/product/:slug`} element={<Product />} />
         </Routes>
       </ScrollToTop>
-    </>
+    </AppContext.Provider>
   );
 };
 

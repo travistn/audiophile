@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { HiMinus, HiPlus } from 'react-icons/hi';
 
 import './ProductDetails.css';
 import { addToCart } from '../../utils/CartActions';
+import { AppContext } from '../../contexts/AppContext';
 
 const ProductDetails = ({ product, productImage }) => {
   const [quantity, setQuantity] = useState(1);
+  const { setCart } = useContext(AppContext);
 
   return (
     <div className='productDetails__container'>
@@ -26,7 +28,7 @@ const ProductDetails = ({ product, productImage }) => {
               onClick={() => setQuantity((prevQuantity) => prevQuantity + 1)}
             />
           </div>
-          <button onClick={() => addToCart(product, quantity)}>Add to cart</button>
+          <button onClick={() => addToCart(product, quantity, setCart)}>Add to cart</button>
         </div>
       </div>
     </div>

@@ -1,13 +1,12 @@
 import { HiMinus, HiPlus } from 'react-icons/hi';
 
+import { editCart } from '../../../utils/CartActions';
 import './CartProducts.css';
 
-const CartProducts = ({ products }) => {
-  console.log(products);
-
+const CartProducts = ({ cart, setCart }) => {
   return (
     <div className='cartProducts__container'>
-      {products.map((product) => (
+      {cart?.map((product) => (
         <div className='cartProducts' key={product.id}>
           <div className='cartProducts-image'>
             <img
@@ -20,17 +19,18 @@ const CartProducts = ({ products }) => {
             <p>{`$${product.price}`}</p>
           </div>
           <div className='cartProducts-quantity'>
-            <HiMinus className='product__content-quantity-minus' />
+            <HiMinus
+              className='product__content-quantity-minus'
+              onClick={() => editCart(product, 'subtract', setCart)}
+            />
             <span>{product.quantity}</span>
-            <HiPlus className='product__content-quantity-plus' />
+            <HiPlus
+              className='product__content-quantity-plus'
+              onClick={() => editCart(product, 'add', setCart)}
+            />
           </div>
         </div>
       ))}
-      <div className='cartProducts-total'>
-        <h3>Total</h3>
-        <p>$5000</p>
-      </div>
-      <button>Checkout</button>
     </div>
   );
 };

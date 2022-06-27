@@ -1,22 +1,30 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 
+import { AppContext } from '../../contexts/AppContext';
 import CartProducts from './CartProducts/CartProducts';
 import './Cart.css';
 
 const Cart = () => {
-  const [products, setProducts] = useState([]);
+  const { cart, setCart } = useContext(AppContext);
+
+  console.log(cart);
 
   useEffect(() => {
-    setProducts(JSON.parse(localStorage.getItem('cart')));
-  }, []);
+    setCart(JSON.parse(localStorage.getItem('cart')));
+  }, [setCart]);
 
   return (
     <div className='cart__container'>
       <div className='cart__header'>
-        <h4>Cart ({products.length})</h4>
+        <h4>Cart ({cart?.length})</h4>
         <p>Remove All</p>
       </div>
-      <CartProducts products={products} />
+      <CartProducts cart={cart} setCart={setCart} />
+      <div className='cart-total'>
+        <h3>Total</h3>
+        <p>$5000</p>
+      </div>
+      <button>Checkout</button>
     </div>
   );
 };
