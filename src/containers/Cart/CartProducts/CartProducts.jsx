@@ -4,6 +4,14 @@ import { editCart } from '../../../utils/CartActions';
 import './CartProducts.css';
 
 const CartProducts = ({ cart, setCart }) => {
+  const shortProductName = (productName, id) => {
+    if (id === 3 || id === 4) {
+      return productName.replace('Mark', 'MK').substring(0, 10);
+    } else {
+      return productName.split(' ')[0];
+    }
+  };
+
   return (
     <div className='cartProducts__container'>
       {cart?.map((product) => (
@@ -15,8 +23,8 @@ const CartProducts = ({ cart, setCart }) => {
             />
           </div>
           <div className='cartProducts-details'>
-            <h5>{product.name.split(' ')[0]}</h5>
-            <p>{`$${product.price}`}</p>
+            <h5>{shortProductName(product.name, product.id)}</h5>
+            <p>{`$${product.price.toLocaleString()}`}</p>
           </div>
           <div className='cartProducts-quantity'>
             <HiMinus
