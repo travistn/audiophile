@@ -8,6 +8,7 @@ import Headphones from './containers/Headphones/Headphones';
 import Speakers from './containers/Speakers/Speakers';
 import Earphones from './containers/Earphones/Earphones';
 import Product from './containers/Product/Product';
+import Checkout from './containers/Checkout/Checkout';
 import ScrollToTop from './utils/ScrollToTop';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/speakers' element={<Speakers />} />
           <Route path='/earphones' element={<Earphones />} />
           <Route path={`/product/:slug`} element={<Product />} />
+          <Route path={'/checkout'} element={<Checkout />} />
         </Routes>
       </ScrollToTop>
     </AppContext.Provider>

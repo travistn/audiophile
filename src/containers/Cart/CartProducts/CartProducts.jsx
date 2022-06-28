@@ -1,17 +1,10 @@
 import { HiMinus, HiPlus } from 'react-icons/hi';
 
 import { editCart } from '../../../utils/CartActions';
+import { shortProductName } from '../../../utils/ShortProductName';
 import './CartProducts.css';
 
 const CartProducts = ({ cart, setCart }) => {
-  const shortProductName = (productName, id) => {
-    if (id === 3 || id === 4) {
-      return productName.replace('Mark', 'MK').substring(0, 10);
-    } else {
-      return productName.split(' ')[0];
-    }
-  };
-
   return (
     <div className='cartProducts__container'>
       {cart?.map((product) => (

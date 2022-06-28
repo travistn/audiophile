@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { AppContext } from '../../contexts/AppContext';
 import { clearCart } from '../../utils/CartActions';
@@ -7,6 +8,7 @@ import './Cart.css';
 
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem('cart')));
@@ -28,7 +30,7 @@ const Cart = () => {
         <h3>Total</h3>
         <p>{`$${(totalPrice > 0 ? totalPrice : 0).toLocaleString()}`}</p>
       </div>
-      <button>Checkout</button>
+      <button onClick={() => navigate('/checkout')}>Checkout</button>
     </div>
   );
 };
