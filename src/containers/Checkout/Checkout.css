@@ -20,6 +20,7 @@
   width: 1110px;
   margin-top: 7rem;
   gap: 2rem;
+  margin-bottom: 8rem;
 }
 
 .checkout__wrapper h4 {
@@ -141,4 +142,9 @@
   font-size: 15px;
   line-height: 25px;
   opacity: 0.8;
+}
+
+.checkout-footer {
+  background-color: var(--color-light-gray);
+  margin-top: -10rem;
 }

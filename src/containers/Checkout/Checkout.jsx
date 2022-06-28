@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 import CheckoutSummary from './CheckoutSummary/CheckoutSummary';
 import cashDeliveryIcon from '../../assets/checkout/icon-cash-on-delivery.svg';
+
 import './Checkout.css';
 
 const Checkout = () => {
@@ -166,6 +168,9 @@ const Checkout = () => {
           </div>
           <CheckoutSummary />
         </div>
+      </div>
+      <div className='checkout-footer'>
+        <Footer />
       </div>
     </>
   );
