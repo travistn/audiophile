@@ -1,0 +1,143 @@
+.checkoutConfirmation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  height: 581px;
+  left: 678px;
+  top: 210px;
+  padding: 3rem;
+  gap: 2rem;
+  border-radius: 8px;
+  background-color: var(--color-white);
+}
+
+.checkoutConfirmation-image img {
+  width: 64px;
+  height: 64px;
+}
+
+.checkoutConfirmation h2 {
+  width: 284px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.14286px;
+  text-transform: uppercase;
+}
+
+.confirmation-message {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.6;
+}
+
+.checkoutConfirmation__summary {
+  display: flex;
+  flex-direction: row;
+  width: 444px;
+  height: 140px;
+}
+
+.checkoutConfirmation-cart {
+  width: 246px;
+  height: 140px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: var(--color-light-gray);
+}
+
+.checkoutConfirmation-cart-content {
+  width: 198px;
+  height: 65px;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkoutConfirmation-products {
+  width: 198px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+}
+
+.checkoutConfirmation-products img {
+  width: 50px;
+  height: 50px;
+}
+
+.confirmation-products-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.confirmation-products-details h3 {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.checkoutConfirmation-products p {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.5;
+}
+
+.checkoutConfirmation-cart-content h5 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.214286px;
+  opacity: 0.6;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.checkoutConfirmation-total {
+  width: 198px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.checkoutConfirmation-total h5 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.5;
+}
+
+.checkoutConfirmation-total p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.checkoutConfirmation button {
+  width: 444px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-style: none;
+  background-color: var(--color-dark-orange);
+  color: var(--color-white);
+}
+
+.checkoutConfirmation button:hover {
+  cursor: pointer;
+  background-color: var(--color-pale-orange);
+}

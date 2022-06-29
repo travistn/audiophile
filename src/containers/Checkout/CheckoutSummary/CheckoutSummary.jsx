@@ -1,7 +1,7 @@
 import { shortProductName } from '../../../utils/ShortProductName';
 import './CheckoutSummary.css';
 
-const CheckoutSummary = () => {
+const CheckoutSummary = ({ setShowConfirmation }) => {
   const checkoutCart = JSON.parse(localStorage.getItem('cart'));
 
   const totalPrice = checkoutCart?.reduce(
@@ -47,7 +47,7 @@ const CheckoutSummary = () => {
         <h3>Grand Total</h3>
         <p>{`$${(totalPrice + valueAddedTax + 50).toLocaleString()}`}</p>
       </div>
-      <button>Continue and pay</button>
+      <button onClick={() => setShowConfirmation((prev) => !prev)}>Continue and pay</button>
     </div>
   );
 };

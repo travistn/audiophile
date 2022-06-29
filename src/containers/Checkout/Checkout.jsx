@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import CheckoutSummary from './CheckoutSummary/CheckoutSummary';
+import CheckoutConfirmation from './CheckoutConfirmation/CheckoutConfirmation';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import CheckoutSummary from './CheckoutSummary/CheckoutSummary';
 import cashDeliveryIcon from '../../assets/checkout/icon-cash-on-delivery.svg';
 
 import './Checkout.css';
@@ -21,6 +22,7 @@ const Checkout = () => {
     eMoneyPin: '',
   });
   const [paymentType, setPaymentType] = useState('eMoney');
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
   const handleFormChange = (e) => {
@@ -166,8 +168,9 @@ const Checkout = () => {
               </div>
             </form>
           </div>
-          <CheckoutSummary />
+          <CheckoutSummary setShowConfirmation={setShowConfirmation} />
         </div>
+        {showConfirmation && <CheckoutConfirmation />}
       </div>
       <div className='checkout-footer'>
         <Footer />
