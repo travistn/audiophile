@@ -170,7 +170,12 @@ const Checkout = () => {
           </div>
           <CheckoutSummary setShowConfirmation={setShowConfirmation} />
         </div>
-        {showConfirmation && <CheckoutConfirmation showConfirmation={showConfirmation} />}
+        {showConfirmation && (
+          <CheckoutConfirmation
+            showConfirmation={showConfirmation}
+            setShowConfirmation={setShowConfirmation}
+          />
+        )}
       </div>
       <div className='checkout-footer'>
         <Footer />

@@ -2,17 +2,17 @@ import { useNavigate } from 'react-router-dom';
 import { Modal } from '@mui/material';
 
 import { shortProductName } from '../../../utils/ShortProductName';
+import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
 import './CheckoutConfirmation.css';
 import confirmationIcon from '../../../assets/checkout/icon-order-confirmation.svg';
 
-const CheckoutConfirmation = ({ showConfirmation }) => {
+const CheckoutConfirmation = ({ showConfirmation, setShowConfirmation }) => {
   const checkoutCart = JSON.parse(localStorage.getItem('cart'));
   const navigate = useNavigate();
 
-  const totalPrice = checkoutCart?.reduce(
-    (prevPrice, current) => prevPrice + current.price * current.quantity,
-    0
-  );
+  const totalPrice = getTotalPrice(checkoutCart);
+  const valueAddedTax = getValueAddedTax(totalPrice);
+  const grandTotal = totalPrice + valueAddedTax + 50;
 
   const otherProductsMessage = () => {
     const cart = checkoutCart.length;
@@ -23,7 +23,7 @@ const CheckoutConfirmation = ({ showConfirmation }) => {
     }
   };
   return (
-    <Modal open={showConfirmation}>
+    <Modal open={showConfirmation} onClose={() => setShowConfirmation((prevState) => !prevState)}>
       <div className='checkoutConfirmation'>
         <div className='checkoutConfirmation-image'>
           <img src={confirmationIcon} alt='confirmation-icon' />
@@ -49,7 +49,7 @@ const CheckoutConfirmation = ({ showConfirmation }) => {
           </div>
           <div className='checkoutConfirmation-total'>
             <h5>Grand Total</h5>
-            <p>{`$${totalPrice.toLocaleString()}`}</p>
+            <p>{`$${grandTotal.toLocaleString()}`}</p>
           </div>
         </div>
         <button onClick={() => navigate('/')}>Back to home</button>
