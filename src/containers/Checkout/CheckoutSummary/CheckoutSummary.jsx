@@ -1,15 +1,13 @@
 import { shortProductName } from '../../../utils/ShortProductName';
+import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
 import './CheckoutSummary.css';
 
 const CheckoutSummary = ({ setShowConfirmation }) => {
   const checkoutCart = JSON.parse(localStorage.getItem('cart'));
 
-  const totalPrice = checkoutCart?.reduce(
-    (prevPrice, current) => prevPrice + current.price * current.quantity,
-    0
-  );
-
-  const valueAddedTax = Math.round(totalPrice * 0.2);
+  const totalPrice = getTotalPrice(checkoutCart);
+  const valueAddedTax = getValueAddedTax(totalPrice);
+  const grandTotal = totalPrice + valueAddedTax + 50;
 
   return (
     <div className='checkoutSummary__container'>
@@ -45,7 +43,7 @@ const CheckoutSummary = ({ setShowConfirmation }) => {
       </div>
       <div className='checkoutSummary-grandTotal'>
         <h3>Grand Total</h3>
-        <p>{`$${(totalPrice + valueAddedTax + 50).toLocaleString()}`}</p>
+        <p>{`$${grandTotal.toLocaleString()}`}</p>
       </div>
       <button onClick={() => setShowConfirmation((prev) => !prev)}>Continue and pay</button>
     </div>
