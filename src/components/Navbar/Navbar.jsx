@@ -34,7 +34,7 @@ const Navbar = () => {
         className='navbar-cartIcon'
         onClick={() => setCartIsOpen(!cartIsOpen)}
       />
-      {cartIsOpen && <Cart />}
+      {cartIsOpen && <Cart cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} />}
       <div className='navbar-underline'></div>
     </div>
   );

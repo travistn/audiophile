@@ -3,14 +3,13 @@
   flex-direction: column;
   width: 377px;
   min-height: 340px;
-
-  position: absolute;
-  right: -167px;
-  top: 100px;
-
   background-color: var(--color-white);
   border-radius: 8px;
+  outline: none;
   padding: 2rem;
+  margin-top: 7.5rem;
+  margin-left: 70.5rem;
+  position: relative;
 }
 
 .cart__header {
