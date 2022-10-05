@@ -6,6 +6,11 @@ An e-commerce website for audiophiles.
 ## Description
 This project was created by using a Figma design to replicate the UI to the design as much as possible.
 
+## Demonstrations
+
+### Home
+
+
 ## Technologies Used
 * React.js
 * Javascript
