@@ -1,12 +1,16 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '@mui/material';
 
+import { AppContext } from '../../../contexts/AppContext';
 import { shortProductName } from '../../../utils/ShortProductName';
 import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
+import { clearCart } from '../../../utils/CartActions';
 import './CheckoutConfirmation.css';
 import confirmationIcon from '../../../assets/checkout/icon-order-confirmation.svg';
 
 const CheckoutConfirmation = ({ showConfirmation, setShowConfirmation }) => {
+  const { setCart } = useContext(AppContext);
   const checkoutCart = JSON.parse(localStorage.getItem('cart'));
   const navigate = useNavigate();
 
@@ -52,7 +56,13 @@ const CheckoutConfirmation = ({ showConfirmation, setShowConfirmation }) => {
             <p>{`$${grandTotal.toLocaleString()}`}</p>
           </div>
         </div>
-        <button onClick={() => navigate('/')}>Back to home</button>
+        <button
+          onClick={() => {
+            navigate('/');
+            clearCart(setCart);
+          }}>
+          Back to home
+        </button>
       </div>
     </Modal>
   );
