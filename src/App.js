@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
 import './App.css';
 import { AppContext } from './contexts/AppContext';
@@ -17,18 +19,20 @@ const App = () => {
   const contextValues = { cart, setCart };
 
   return (
-    <AppContext.Provider value={contextValues}>
-      <ScrollToTop>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/headphones' element={<Headphones />} />
-          <Route path='/speakers' element={<Speakers />} />
-          <Route path='/earphones' element={<Earphones />} />
-          <Route path={`/product/:slug`} element={<Product />} />
-          <Route path={'/checkout'} element={<Checkout />} />
-        </Routes>
-      </ScrollToTop>
-    </AppContext.Provider>
+    <Provider store={store}>
+      <AppContext.Provider value={contextValues}>
+        <ScrollToTop>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/headphones' element={<Headphones />} />
+            <Route path='/speakers' element={<Speakers />} />
+            <Route path='/earphones' element={<Earphones />} />
+            <Route path={`/product/:slug`} element={<Product />} />
+            <Route path={'/checkout'} element={<Checkout />} />
+          </Routes>
+        </ScrollToTop>
+      </AppContext.Provider>
+    </Provider>
   );
 };
 
