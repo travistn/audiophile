@@ -1,28 +1,27 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { AppContext } from '../../../contexts/AppContext';
-import { shortProductName } from '../../../utils/ShortProductName';
-import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
-import { clearCart } from '../../../utils/CartActions';
 import './CheckoutConfirmation.css';
 import confirmationIcon from '../../../assets/checkout/icon-order-confirmation.svg';
+import { shortProductName } from '../../../utils/ShortProductName';
+import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
+import { selectCart, clearCart } from '../../../redux/slices/cart';
 
 const CheckoutConfirmation = ({ showConfirmation, setShowConfirmation }) => {
-  const { setCart } = useContext(AppContext);
-  const checkoutCart = JSON.parse(localStorage.getItem('cart'));
+  const cart = useSelector(selectCart);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const totalPrice = getTotalPrice(checkoutCart);
+  const totalPrice = getTotalPrice(cart);
   const valueAddedTax = getValueAddedTax(totalPrice);
   const grandTotal = totalPrice + valueAddedTax + 50;
 
   const otherProductsMessage = () => {
-    const cart = checkoutCart.length;
-    if (cart > 1) {
-      return `and ${cart - 1} other items(s)`;
-    } else if (cart === 1) {
+    const cartQuantity = cart.length;
+    if (cartQuantity > 1) {
+      return `and ${cartQuantity - 1} other items(s)`;
+    } else if (cartQuantity === 1) {
       return '';
     }
   };
@@ -39,14 +38,14 @@ const CheckoutConfirmation = ({ showConfirmation, setShowConfirmation }) => {
             <div className='checkoutConfirmation-cart-content'>
               <div className='checkoutConfirmation-products'>
                 <img
-                  src={require(`../../../assets/cart/image-${checkoutCart[0].slug}.jpg`)}
+                  src={require(`../../../assets/cart/image-${cart[0].slug}.jpg`)}
                   alt='product-thumbnail'
                 />
                 <div className='confirmation-products-details'>
-                  <h3>{shortProductName(checkoutCart[0].name, checkoutCart[0].id)}</h3>
-                  <p>{`$${checkoutCart[0].price.toLocaleString()}`}</p>
+                  <h3>{shortProductName(cart[0].name, cart[0].id)}</h3>
+                  <p>{`$${cart[0].price.toLocaleString()}`}</p>
                 </div>
-                <p>{`x${checkoutCart[0].quantity}`}</p>
+                <p>{`x${cart[0].quantity}`}</p>
               </div>
               <h5>{otherProductsMessage()}</h5>
             </div>
@@ -59,7 +58,7 @@ const CheckoutConfirmation = ({ showConfirmation, setShowConfirmation }) => {
         <button
           onClick={() => {
             navigate('/');
-            clearCart(setCart);
+            dispatch(clearCart());
           }}>
           Back to home
         </button>

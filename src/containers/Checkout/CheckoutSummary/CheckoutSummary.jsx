@@ -1,18 +1,21 @@
+import { useSelector } from 'react-redux';
+
+import './CheckoutSummary.css';
 import { shortProductName } from '../../../utils/ShortProductName';
 import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
-import './CheckoutSummary.css';
+import { selectCart } from '../../../redux/slices/cart';
 
 const CheckoutSummary = ({ setShowConfirmation }) => {
-  const checkoutCart = JSON.parse(localStorage.getItem('cart'));
+  const cart = useSelector(selectCart);
 
-  const totalPrice = getTotalPrice(checkoutCart);
+  const totalPrice = getTotalPrice(cart);
   const valueAddedTax = getValueAddedTax(totalPrice);
   const grandTotal = totalPrice + valueAddedTax + 50;
 
   return (
     <div className='checkoutSummary__container'>
       <h5>Summary</h5>
-      {checkoutCart?.map((product) => (
+      {cart?.map((product) => (
         <div className='checkoutSummary__products' key={product.id}>
           <div className='checkoutSummary-image'>
             <img
