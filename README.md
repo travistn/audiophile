@@ -48,3 +48,4 @@ The motivation was of this project was that I wanted to better my development sk
 * CSS
 * HTML
 * React Router
+* Redux
