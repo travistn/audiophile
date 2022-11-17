@@ -12,12 +12,19 @@ export const quantitySlice = createSlice({
       state.value += 1;
     },
     decrement: (state) => {
-      state.value -= 1;
+      if (state.value === 1) {
+        state.value = 1;
+      } else {
+        state.value -= 1;
+      }
+    },
+    resetQuantity: (state) => {
+      state.value = 1;
     },
   },
 });
 
 export const selectQuantity = (state) => state.quantity.value;
 
-export const { increment, decrement } = quantitySlice.actions;
+export const { increment, decrement, resetQuantity } = quantitySlice.actions;
 export default quantitySlice.reducer;

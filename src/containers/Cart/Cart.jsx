@@ -1,36 +1,29 @@
-import React, { useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { AppContext } from '../../contexts/AppContext';
-import { clearCart } from '../../utils/CartActions';
-import CartProducts from './CartProducts/CartProducts';
 import './Cart.css';
+import CartProducts from './CartProducts/CartProducts';
+import { getTotalPrice } from '../../utils/TotalPrice';
+import { CartQuantity } from '../../utils/CartQuantity';
+import { selectCart, clearCart } from '../../redux/slices/cart';
 
 const Cart = ({ cartIsOpen, setCartIsOpen }) => {
-  const { cart, setCart } = useContext(AppContext);
+  const cart = useSelector(selectCart);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem('cart')));
-  }, [setCart]);
-
-  const totalPrice = cart?.reduce(
-    (prevPrice, current) => prevPrice + current.price * current.quantity,
-    0
-  );
 
   return (
     <Modal open={cartIsOpen} onClose={() => setCartIsOpen((prevState) => !prevState)}>
       <div className='cart__container'>
         <div className='cart__header'>
-          <h4>Cart ({cart?.length})</h4>
-          <p onClick={() => clearCart(setCart)}>Remove All</p>
+          <h4>Cart ({CartQuantity(cart)})</h4>
+          <p onClick={() => dispatch(clearCart())}>Remove All</p>
         </div>
-        <CartProducts cart={cart} setCart={setCart} />
+        <CartProducts />
         <div className='cart-total'>
           <h3>Total</h3>
-          <p>{`$${(totalPrice > 0 ? totalPrice : 0).toLocaleString()}`}</p>
+          <p>{`$${(getTotalPrice(cart) > 0 ? getTotalPrice(cart) : 0).toLocaleString()}`}</p>
         </div>
         <button onClick={() => navigate('/checkout')}>Checkout</button>
       </div>

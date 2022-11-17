@@ -1,10 +1,14 @@
 import { HiMinus, HiPlus } from 'react-icons/hi';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { editCart } from '../../../utils/CartActions';
-import { shortProductName } from '../../../utils/ShortProductName';
 import './CartProducts.css';
+import { shortProductName } from '../../../utils/ShortProductName';
+import { selectCart, addItem, removeItem } from '../../../redux/slices/cart';
 
-const CartProducts = ({ cart, setCart }) => {
+const CartProducts = () => {
+  const cart = useSelector(selectCart);
+  const dispatch = useDispatch();
+
   return (
     <div className='cartProducts__container'>
       {cart?.map((product) => (
@@ -22,12 +26,12 @@ const CartProducts = ({ cart, setCart }) => {
           <div className='cartProducts-quantity'>
             <HiMinus
               className='product__content-quantity-minus'
-              onClick={() => editCart(product, 'subtract', setCart)}
+              onClick={() => dispatch(removeItem(product))}
             />
             <span>{product.quantity}</span>
             <HiPlus
               className='product__content-quantity-plus'
-              onClick={() => editCart(product, 'add', setCart)}
+              onClick={() => dispatch(addItem(product))}
             />
           </div>
         </div>

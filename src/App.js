@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import './App.css';
-import { AppContext } from './contexts/AppContext';
 import Home from './containers/Home/Home';
 import Headphones from './containers/Headphones/Headphones';
 import Speakers from './containers/Speakers/Speakers';
@@ -12,15 +10,13 @@ import Earphones from './containers/Earphones/Earphones';
 import Product from './containers/Product/Product';
 import Checkout from './containers/Checkout/Checkout';
 import ScrollToTop from './utils/ScrollToTop';
+import { store } from './redux/store';
+import { persistor } from './redux/store';
 
 const App = () => {
-  const [cart, setCart] = useState();
-
-  const contextValues = { cart, setCart };
-
   return (
     <Provider store={store}>
-      <AppContext.Provider value={contextValues}>
+      <PersistGate loading={null} persistor={persistor}>
         <ScrollToTop>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -31,7 +27,7 @@ const App = () => {
             <Route path={'/checkout'} element={<Checkout />} />
           </Routes>
         </ScrollToTop>
-      </AppContext.Provider>
+      </PersistGate>
     </Provider>
   );
 };
