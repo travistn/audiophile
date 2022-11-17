@@ -31,6 +31,16 @@ Users can change the quantity of a product, remove a product, or clear the cart.
 
 ![Cart](https://user-images.githubusercontent.com/42354863/194171215-0d7fbbd6-f548-4ba7-ae6d-40d69373d805.gif)
 
+Users can checkout their cart and will be prompted to fill out billing information.
+
+![Checkout](https://user-images.githubusercontent.com/42354863/194171938-4f885d49-2752-40bc-88de-c5b9f8626237.gif)
+
+After submitting the checkout information, when users receive the checkout confirmation the cart will be cleared after.
+
+![Checkout2](https://user-images.githubusercontent.com/42354863/194173297-7dc38ca3-5187-4562-84a4-890179b0ef4d.gif)
+
+## Motivation
+The motivation was of this project was that I wanted to better my development skills with the UI and front-end functionality. I wanted to save time in trying to design a website from scratch so that is why I used an existing Figma design from [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). The React code is written all from myself.
 
 ## Technologies Used
 * React.js
