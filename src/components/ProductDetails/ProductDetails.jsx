@@ -1,12 +1,16 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { HiMinus, HiPlus } from 'react-icons/hi';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment, selectQuantity } from '../../redux/slices/quantity';
 
 import './ProductDetails.css';
 import { addToCart } from '../../utils/CartActions';
 import { AppContext } from '../../contexts/AppContext';
 
 const ProductDetails = ({ product, productImage }) => {
-  const [quantity, setQuantity] = useState(1);
+  const quantity = useSelector(selectQuantity);
+  const dispatch = useDispatch();
+
   const { setCart } = useContext(AppContext);
 
   return (
@@ -20,12 +24,12 @@ const ProductDetails = ({ product, productImage }) => {
           <div className='product__content-quantity'>
             <HiMinus
               className='product__content-quantity-minus'
-              onClick={() => setQuantity((prevQuantity) => prevQuantity - 1)}
+              onClick={() => dispatch(decrement())}
             />
             <span>{quantity}</span>
             <HiPlus
               className='product__content-quantity-plus'
-              onClick={() => setQuantity((prevQuantity) => prevQuantity + 1)}
+              onClick={() => dispatch(increment())}
             />
           </div>
           <button onClick={() => addToCart(product, quantity, setCart)}>Add to cart</button>
