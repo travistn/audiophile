@@ -56,6 +56,7 @@ const Checkout = () => {
                     id='name'
                     value={buyer.name}
                     onChange={handleFormChange}
+                    required
                   />
                 </label>
                 <label>
@@ -168,7 +169,7 @@ const Checkout = () => {
               </div>
             </form>
           </div>
-          <CheckoutSummary setShowConfirmation={setShowConfirmation} />
+          <CheckoutSummary setShowConfirmation={setShowConfirmation} buyer={buyer} />
         </div>
         {showConfirmation && (
           <CheckoutConfirmation

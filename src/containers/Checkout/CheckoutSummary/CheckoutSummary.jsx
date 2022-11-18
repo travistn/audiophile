@@ -5,12 +5,14 @@ import { shortProductName } from '../../../utils/ShortProductName';
 import { getTotalPrice, getValueAddedTax } from '../../../utils/TotalPrice';
 import { selectCart } from '../../../redux/slices/cart';
 
-const CheckoutSummary = ({ setShowConfirmation }) => {
+const CheckoutSummary = ({ setShowConfirmation, buyer }) => {
   const cart = useSelector(selectCart);
 
   const totalPrice = getTotalPrice(cart);
   const valueAddedTax = getValueAddedTax(totalPrice);
   const grandTotal = totalPrice + valueAddedTax + 50;
+
+  const billingDetailsFilled = Object.values(buyer).every((value) => value !== '');
 
   return (
     <div className='checkoutSummary__container'>
@@ -48,7 +50,14 @@ const CheckoutSummary = ({ setShowConfirmation }) => {
         <h3>Grand Total</h3>
         <p>{`$${grandTotal.toLocaleString()}`}</p>
       </div>
-      <button onClick={() => setShowConfirmation((prev) => !prev)}>Continue and pay</button>
+      <button
+        className={`checkoutSummary-button ${
+          !billingDetailsFilled ? 'checkoutSummary-buttonDisabled' : 'checkoutSummary-buttonActive'
+        }`}
+        onClick={() => setShowConfirmation((prev) => !prev)}
+        disabled={!billingDetailsFilled}>
+        Continue and pay
+      </button>
     </div>
   );
 };
